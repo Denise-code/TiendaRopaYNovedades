@@ -74,12 +74,19 @@ WSGI_APPLICATION = 'Tienda.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'Tienda',
+        'USER': 'sa',
+        'PASSWORD': 'sa',
+        'HOST': '',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
     }
 }
 
